@@ -1,0 +1,63 @@
+﻿Node: central point for all tree-like objects or values
+    DictionaryNode
+    ListNode
+        StringNode
+    BooleanNode
+    NumberNode
+    0
+Json: produces a Node
+
+An Array is a ListNode?
+    Or Array->ListNode easily, and ListNode->Array easily?
+    Array is a ListNode with a particular type
+A String is a ListNode?
+    Or String->ListNode easily, and ListNode->String easily?
+
+
+A Glom will be a 
+
+Bottom line: what do YOU want?
+
+I want:
+
+BASICS
+Array<int> a = Array<int>.From(1, 2, 3);
+x a.Store(file);
+file.Add(a);
+x a.Save(); - equivalent to a "promote"
+Array<int> a2 = Array<int>.From(4, 5);
+a3 = a2 + a;
+Save(a3); // considers context
+a3.ToMatrix() // extensions added via static utilities, in areas
+
+GLOMWISE
+Gloms area
+
+Or is a Node just a wrapper view for an existing object?
+ArrayNode
+ValueNode
+StringNode
+ObjectNode
+NamespacesNode
+
+Can a Glom wrap a Node? Sure!
+
+Node
+    [int or string]
+    ChildSource
+    PocoValue
+
+nodes are just views of various tree forms
+    objects and values
+    directories and files
+    arrays and values
+    strings and characters
+
+only Node class should be acknowledged publicly
+each Node type is the purview of items like Array or Matrix to provide if they feel like it, while registering a conversion
+    each might feel like offering a type that represents a container node and a type that represents a leaf node
+they should not be JSON-focused
+
+Why do we need Nodes?
+Should there be Distinctor-specific Nodes? Or nodes that pivot their children based on the distinctor?
+Should Distinctors be available that are just filters over all children?

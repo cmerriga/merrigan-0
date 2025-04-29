@@ -1,0 +1,175 @@
+﻿Should be the one-stop-shopping to use any proven, solid common functionality provided by Merrigan.
+
+Layers of this project:
+- Basic testing utilities: Testing
+    - To support test executor, continuous text executor
+- Standard .NET utilities: DotNet
+- Standard logical utilities: Merrigan root
+- 100% event-based data structures: EventBased
+- Contexts with frames: Contexts
+- Programmatic text interface for contexts: ContextCommands
+- Windows console for contexts: ContextConsole
+- Layer that reifies execution and provides full reversability: TrackedExecution
+- Automatic testing utilities: AutomaticTesting
+- Prospective execution, memoized caching: Memoized
+- Data access via (graph query, full language) to (SQL, files, contexts, other data mounds): DataMound
+- Data mound chains via in-memory, pipe, TCP: Interprocess
+- Actor/pipeline execution with single-thread + thread-dedicated operations like disk: Pipelines
+- Marketplace for operation execution over TCP: Marketplace
+- CDD utilities (situations, probabilities, learning, promotion, permissions, full language, native interface): Cdd
+- Windows console for CDD
+- CDD-powered graphics: Windows
+- CDD-powered graphics: HTML/CSS
+- Hybrid console for CDD
+
+Items from earlier layers may not access items from later layers
+Items from later layers may access items from any previous layer back to the last = sign
+
+Conventions
+------------------------------------------------------------------------------
+function signatures
+    reference objects must not be null unless labeled by [MayBeNull]
+    reasonable hints may be given if it is a likely scenario that some hard-won data is already known
+        example: type = null, but can be provided if a type was already determined
+names
+    Value is for specified Ts or things that work like generics, like different types of Gloms
+    o/appropriate is for objects
+    Item is for group member
+
+to do
+------------------------------------------------------------------------------
+ListWrapperArray (covers blocks via IList)
+SortedListWrapperArray
+SortedDistinctListWrapperArray
+
+- Meta
+    - Attributed C#
+    - Automatic test generation
+    - Dependencies - discovered
+    - Call wrapping with automatic tracing or other instrumentation, behavior or fault injection, test generation
+    - CDD based addressing
+    - String-to-object/typed JSON
+    - Random with constraints
+
+
+What would I want to do with drawing?
+1. Set {quantized area: pixel XY, rect XYWH; area: circle XYR, ellipse XYRR, triangle XYXYXY, rect XYWH, line XYXYW} to color C on {pixel grid: window W, image I}
+2. Set image I on {pixel grid: window W, image I}
+3. Set text in color C on {pixel grid}
+4. Draw gradient with quick halftone
+5. Apply RGB array to screen
+6. Overlay RGBA array over screen
+7. Define all of the above as permanent, probably via saved operations chain
+
+Behind the scenes, though, what do other things need?
+1. Be able to suck out any rectangle of pixels at any time. (Windows will use this)
+    a. Might need some proactive, and some reactive.
+    b. Need tasks shelf--prioritized based on urgency that adds to 1.
+2. Be able to suck out a region. Strategy, divide wisely into rectangles. (Image coalescing may use this)
+3. Be able to reach into the structure and convert to similar structures. (HTML might use this)
+
+- Everything that is a one-to-one relation to wrapped/adapted objects should be possible from any one of the instances.
+    Example: given a WindowsImage, you can always get its Image
+        given an Image, if it is also a WindowsImage, you can get that via "TryAs()"
+GridXxxx objects are shapes that are aligned to integer boundaries
+
+
+8/7/24
+o JSON
+    o partial recognizers 
+        o string literal recognizer
+o change Only pattern for recognizers into Recognizers.[member]
+o add Extender to String class and wire up ToString() to it
+    o Extender is a struct with a lazily created object inside
+    o test with its own Test() that uses a String
+
+8/10/24
+types of numeric types
+    longish (convertible to long)
+        sbyte
+        byte
+        short
+        ushort
+        int
+        uint
+        long
+    ulongish
+        ulong
+    doubleish
+        float
+        double
+    decimalish
+        decimal
+
+8/11/24
+o implicit operators for typed Gloms
+o caps for all types in comments
+
+Json
+    String
+    Glom
+    Children Jsons
+    Append to String
+    If only string given, then
+        If Glom is requested, ParseGlomAndChildren; save Json children
+        If Json children are requested, ParseWithGlom; save Glom
+    If only glom given, then
+        If String is requested, AppendAndCreateChildren; save Json children
+        If Json children are requested, AppendAndCreateChildren; save Glom
+  
+8/23/24      
+x add support for Examples without optional parameters
+    count the optional parameters
+    get the total input parameters count
+    get the optional parameters count
+    calculate the # of optional parameters that have an argument
+    do not set any optional parameters that are 
+    o is there an Invoke() that takes a dictionary/object?
+    x can you call Invoke() on an optional parameter with
+        not specifying a param? NO
+        specifiying null? NO - does not take the default!
+
+o add test of NotSupported methods, that they throw NotSupportedException
+    could make sure NotSupported is a constraint attribute like Throws
+
+8/27/24
+"Wrapper" class names needed when POCO interfaces/classes are wrapped by M types
+
+x check for any more Meta or Testing inclusion
+x add to all
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+/ change other Only-s to Blah.Blah
+x tease out Enumerators folder - Arrays folder should work
+x add Convert() to Set
+o test recently-tested stuff
+o review and test Call system
+o change GlobalGlom to Glom.Global
+o Gloms go in Nml?
+o restore test to whole-library
+o review Change/ChangeTracker pattern
+
+8/29/24
+x make constructor tests work
+x label each property and field tests
+x continue to commented-out tests
+/ test next file: Array
+    x suppress Untesteds in Check function
+    - add Unique to fields/properties, with optional group name
+    x add [ExtenderIndex] for static properties and fields and have class tests enforce them
+    o 1st new prop/method
+    o 2nd
+    o 3rd
+x consider Context naming location: name of parent? or name of child? 
+o Call should check if something is NotSupported or Untested if in Inspect mode
+x add Extender to String
+
+8/31/24
+x CompiledGlomProperty as struct
+o reduce null acceptance down to only result of Glom paths and unspecified parameters/members
+
+9/2/24
+x change Internal namespaces
+x change TestingUtilities to Testing
+

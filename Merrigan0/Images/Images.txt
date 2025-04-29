@@ -1,0 +1,2 @@
+﻿- Should be OS and display agnostic. Windows-specific code must be located under the Windows namespace
+- Color should be used by default. Rgb/Rgba should be used only for optimized, byte-level operations.

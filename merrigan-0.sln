@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merrigan0", "Merrigan0\Merrigan0.csproj", "{00BADC59-AB74-4568-A095-3DF6D5D266E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{E463BEEF-FB3F-4DFE-B304-AA9F3D73B911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experiment", "Experiment\Experiment.csproj", "{15CEB738-9796-4B03-851D-06298647A6AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Executions", "Executions\Executions.csproj", "{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompilationTest", "CompilationTest\CompilationTest.csproj", "{14F65FD5-B97F-43F1-86CD-730509299DB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlomConsole", "GlomConsole\GlomConsole.csproj", "{4DC35B72-7D6C-48B5-831B-3E47AE594BB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelWindowTest.cs", "PixelWindowTest.cs\PixelWindowTest.cs.csproj", "{726DDE67-862D-44D1-982C-5C0B7979A99B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00BADC59-AB74-4568-A095-3DF6D5D266E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00BADC59-AB74-4568-A095-3DF6D5D266E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BADC59-AB74-4568-A095-3DF6D5D266E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00BADC59-AB74-4568-A095-3DF6D5D266E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E463BEEF-FB3F-4DFE-B304-AA9F3D73B911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E463BEEF-FB3F-4DFE-B304-AA9F3D73B911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E463BEEF-FB3F-4DFE-B304-AA9F3D73B911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E463BEEF-FB3F-4DFE-B304-AA9F3D73B911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CEB738-9796-4B03-851D-06298647A6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CEB738-9796-4B03-851D-06298647A6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CEB738-9796-4B03-851D-06298647A6AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DC35B72-7D6C-48B5-831B-3E47AE594BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DC35B72-7D6C-48B5-831B-3E47AE594BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DC35B72-7D6C-48B5-831B-3E47AE594BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DC35B72-7D6C-48B5-831B-3E47AE594BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{726DDE67-862D-44D1-982C-5C0B7979A99B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{726DDE67-862D-44D1-982C-5C0B7979A99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{726DDE67-862D-44D1-982C-5C0B7979A99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{726DDE67-862D-44D1-982C-5C0B7979A99B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,472 @@
+﻿
+    //public class SetBuilder<T> {
+    //    private List<Set<T>> sets;
+    //    private List<T> singleValues;
+
+    //    public void Add(T value) {
+    //        if (singleValues == null) {
+    //            singleValues = new List<T>();
+    //        }
+    //        singleValues.Add(value);
+    //    }
+
+    //    public void Add(Set<T> set) {
+    //        if (sets == null) {
+    //            sets = new List<Set<T>>();
+    //        }
+    //        sets.Add(set);
+    //    }
+
+    //    public void Add(IEnumerable<T> values) {
+    //        if (sets == null) {
+    //            sets = new List<Set<T>>();
+    //        }
+    //        sets.Add(new GroupSet<T>(values));
+    //    }
+
+    //    public Set<T> ToSet() {
+    //        if (sets == null) {
+    //            if (singleValues == null) {
+    //                return new EmptySet<T>();
+    //            }
+
+    //            return new GroupSet<T>(singleValues);
+    //        }
+
+    //        return new StandardSet<T>(sets, singleValues);
+    //    }
+
+        //public IList<Set<T>> GetSets() {
+        //    if (singleValues == null && sets == null) {
+        //        return Array.Empty<Set<T>>();
+        //    }
+
+        //    if (singleValues == null) {
+        //        return sets;
+        //    }
+
+        //    List<Set<T>> setsSoFar = sets;
+        //    setsSoFar.Add(new GroupSet<T>(singleValues));
+        //    return setsSoFar;
+        //}
+    //}
+
+    //public abstract class Set<T> : IEnumerable<T> {
+    //    public abstract bool Contains(T value);
+
+    //    public virtual bool HasSubset(Set<T> set) {
+    //        foreach (T value in set) {
+    //            if (!Contains(value)) {
+    //                return false;
+    //            }
+    //        }
+    //        return true;
+    //    }
+    //}
+
+    //public class EmptySet<T> : Set<T> {
+    //    public override bool Contains(T value) {
+    //        return false;
+    //    }
+    //}
+
+    //public class StandardSet<T> : Set<T> {
+    //    private IList<Set<T>> sets;
+
+    //    public StandardSet(IList<Set<T>> sets, IList<T> singleValues) {
+    //        if (singleValues == null && sets == null) {
+    //            this.sets = System.Array.Empty<Set<T>>();
+    //        } else if (singleValues == null) {
+    //            this.sets = sets;
+    //        } else {
+    //            List<Set<T>> setsSoFar = new List<Set<T>>(sets);
+    //            setsSoFar.Add(new GroupSet<T>(singleValues));
+    //            this.sets = setsSoFar;
+    //        }
+    //    }
+
+    //    public virtual bool Contains(T value) {
+    //        foreach (Set<T> set in sets) {
+    //            if (set.Contains(value)) {
+    //                return true;
+    //            }
+    //        }
+    //        return false;
+    //    }
+
+    //    public virtual bool HasSubset(Set<T> set) {
+    //        foreach (T value in set) {
+    //            if (!Contains(value)) {
+    //                return false;
+    //            }
+    //        }
+    //        return true;
+    //    }
+    //}
+
+    //public class GroupSet<T> : Set<T> {
+    //    private IEnumerable<T> values;
+
+    //    public GroupSet(IEnumerable<T> values) {
+    //        this.values = values;
+    //    }
+
+    //    public override bool Contains(T value) {
+    //        foreach (T valueToTry in values) {
+    //            if (object.Equals(valueToTry, value)) {
+    //                return true;
+    //            }
+    //        }
+    //        return false;
+    //    }
+    //}
+
+    //public class HashSetSet<T> : Set<T> {
+    //    private HashSet<T> hashSet;
+
+    //    public HashSetSet(HashSet<T> hashSet) {
+    //        this.hashSet = hashSet;
+    //    }
+
+    //    public override bool Contains(T value) {
+    //        return hashSet.Contains(value);
+    //    }
+
+    //    public override bool HasSubset(Set<T> set) {
+    //        return hashSet.IsSupersetOf(set);
+    //    }
+    //}
+
+    //public class IntegerRange<T> : Set<T> {
+    //    public int? GreaterThanOrEqual { get; private set; }
+    //    public int? LessThan { get; private set; }
+    //}
+
+        // This is for a system where all objects are binary trees 3/2/21.
+    ////[WhatItIs("The base class for all Merrigan objects.")]
+    ////public class Thing {
+    ////    //private Association association;
+    ////    private Thing previous;
+    ////    private Thing child;
+
+    ////    public Thing() {
+    ////    }
+
+    ////    public Thing(params Thing[] associations) {
+    ////        for (int i = 0; i < associations.Length; ++i) {
+    ////            associations[i].previous = previous;
+    ////            previous = associations[i];
+    ////        }
+    ////    }
+
+    ////    public Thing With(params Thing[] associations) {
+            
+    ////    }
+
+    ////}
+
+    ////public class Association {
+    ////    public Association Previous;
+    ////    public Thing Thing;
+    ////    public Association Child;
+    ////}
+
+    ////public static class GroupConcepts {
+    ////    public static Association Sorted = new Association();
+    ////    public static Association Distinct = new Association();
+    ////    public static Association Ascending = new Association();
+    ////    public static Association Descending = new Association();
+    ////}
+
+    ////public class AssociationReference {
+    ////    public AssociationReference With(params object[] associations)
+    ////}
+
+    //public static class ArrayProfiles<T> {
+    //    public static ArrayProfile<T> Distinct = new ArrayProfile<T>(true);
+    //    public static ArrayProfile<T> Sorted = new ArrayProfile<T>(Comparers.CompareFunction<T>());
+    //    public static ArrayProfile<T> SortedDistinct = new ArrayProfile<T>(Comparers.CompareFunction<T>(), true);
+    //}
+
+    //public class ArrayProfile<T> {
+    //    public ArrayCharacteristic[] Characteristics { get; private set; }
+    //    ////public bool Distinct { get; private set; }
+    //    ////public bool Sorted { get; private set; }
+
+    //    // Each item is unique, using the Equals and GetHashCode of type T
+    //    public bool Distinct { get; private set; }
+
+    //    protected Func<T, T, int> Compare;
+
+    //    public ArrayProfile(bool distinct) {
+    //        Distinct = distinct;
+    //    }
+
+    //    public ArrayProfile(Func<T, T, int> compare) {
+    //        this.Compare = compare;
+    //    }
+
+    //    public ArrayProfile(Func<T, T, int> compare, bool distinct) {
+    //        this.Compare = compare;
+    //        Distinct = distinct;
+    //    }
+
+    //    public ArrayProfile(Func<T, T, int> compare, bool distinct, ArrayCharacteristic[] characteristics) {
+    //        this.Compare = compare;
+    //        Distinct = distinct;
+    //        Characteristics = characteristics;
+    //    }
+
+    //    // Protected set because subclasses may need to set it using "this"
+    //    public bool SortedBy(Func<T, T, int> compare) {
+    //        return Object.Equals(compare, this.Compare);
+    //    }
+    //}
+
+    //////public class KeyedArrayProfile<T, K> : ArrayProfile<T> {
+    //////    protected Func<K, K, int> keysSortedBy;
+    //////    protected Func<T, K> keyedBy;
+
+    //////    public KeyedArrayProfile(Func<T, K> keyedBy, bool distinct, Func<K, K, int> keysSortedBy) : base(distinct) {
+    //////        SortedBy = Compare;
+    //////        this.keyedBy = keyedBy;
+    //////    }
+
+    //////    protected int Compare(T t1, T t2) {
+    //////        return keysSortedBy(keyedBy(t1), keyedBy(t2));
+    //////    }
+    //////}
+
+    //public abstract class ArrayCharacteristic {
+    //}
+
+    ////public class SortedCharacteristic : ArrayCharacteristic {
+    ////}
+
+    ////public class SortedDirectlyCharacteristic : SortedCharacteristic {
+    ////}
+
+    ////public class SortedIndirectlyCharacteristic : SortedCharacteristic {
+    ////}
+
+    ////public class DistinctCharacteristic : ArrayCharacteristic {
+    ////}
+
+    ////public class DirectlyDistinctCharacteristic : DistinctCharacteristic {
+    ////}
+
+    ////public class DistinctCharacteristic
+
+/* Functions to support all array-like types. */
+
+//internal static bool All(IArray<T> array, Func<T, bool> condition) {
+//    foreach (T item in array) {
+//        if (!condition(item)) {
+//            return false;
+//        }
+//    }
+//    return true;
+//}
+
+//internal static bool Any(IArray<T> array, Func<T, bool> condition) {
+//    foreach (T item in array) {
+//        if (condition(item)) {
+//            return true;
+//        }
+//    }
+//    return false;
+//}
+
+////public static Array<TTo> Cast<TTo>(Array<T> array) { return new CastArray<T, TTo>(array); }
+
+//internal static bool Contains(IArray<T> array, T item) {
+//    long dummy;
+//    return array.TryGetIndex(item, 0, out dummy);
+//}
+
+//internal static bool Contains(IArray<T> array, IArray<T> s) {
+//    long dummy;
+//    return array.TryGetIndex(s, 0, out dummy);
+//}
+
+//internal static void CopyTo(IArray<T> array, T[] block, long arrayIndex) {
+//    long length = array.Length;
+//    for (long i = 0; i < length; ++i) {
+//        block[arrayIndex + i] = array[i];
+//    }
+//}
+
+//internal static T[] ToBlock(IArray<T> array) {
+//    T[] block = new T[array.Length];
+//    array.CopyTo(block, 0);
+//    return block;
+//}
+
+//internal static bool TryGetIndex(IArray<T> array, T item, long iBegin, out long i) {
+//    long length = array.Length;
+//    for (long iToTry = iBegin; iToTry < length; ++iToTry) {
+//        if (object.Equals(array[iToTry], item)) {
+//            i = iToTry;
+//            return true;
+//        }
+//    }
+//    i = -1;
+//    return false;
+//}
+
+//internal static bool TryGetIndex(IArray<T> array, IArray<T> s, long iBegin, out long i) {
+//    //// Depending on size, use Boyer-Moore
+//    long length = array.Length;
+//    long substringLength = s.Length;
+//    for (long iToTry = iBegin; iToTry < length; ++iToTry) {
+//        if (iToTry + substringLength > length) {
+//            substringLength = length - iToTry;
+//        }
+//        bool found = true;
+//        for (int jToTry = 0; jToTry < substringLength; ++jToTry) {
+//            if (!object.Equals(array[iToTry + jToTry], s[jToTry])) {
+//                found = false;
+//                break;
+//            }
+//        }
+//        if (found) {
+//            i = iToTry;
+//            return true;
+//        }
+//    }
+//    i = -1;
+//    return false;
+//}
+
+    ////public interface IArray<T> : IEnumerable<T> {
+    ////    T this[long i] { get; }
+    ////    long Length { get; }
+
+    ////    bool All(Func<T, bool> condition);
+    ////    bool Any(Func<T, bool> condition);
+    ////    Array<TTo> Cast<TTo>();
+    ////    bool Contains(T item);
+    ////    bool Contains(IArray<T> s);
+    ////    void CopyTo(T[] array, long arrayIndex);
+    ////    Array<Tuple<T, T2>> Cross<T2>(IArray<T2> arrayNode2);
+    ////    Set<T> Distinct();
+    ////    Set<T> Distinct(Func<T, T, int> compare);
+    ////    Array<Tuple<T, T2>> Dot<T2>(IArray<T2> arrayNode2);
+    ////    bool TryGetIndex(T item, long iBegin, out long i);
+    ////    bool TryGetIndex(IArray<T> s, long iBegin, out long i);
+    ////}
+
+
+
+////using System;
+////using System.Collections.Generic;
+////using System.Text;
+
+////namespace Merrigan0.MetaInternal {
+////    public abstract class Executor {
+////        protected Execution NextExecution { get; set; }
+
+
+////    }
+
+////    public class SimpleExecutor : Executor {
+
+////    }
+
+////    public abstract class Expression : Action {
+////        //public virtual object Value { get; }
+////        ////public abstract object Evaluate(ExecutionContext context);
+
+////        public static void Test() {
+////            Action action = new SequentialAction(
+////                new SetAction("a", 4),
+////                new WhileAction(
+////                    new LessThanExpression(new GetExpression("a"), 123),
+////                    new SetAction(
+////                        "a",
+////                        new MultiplyExpression(new GetExpression("a"), 2))),
+////                new SetAction("return", new GetExpression("a")));
+////            ExecutionContext context = new ExecutionContext();
+////            Execution execution = action.CreateExecution();
+////            execution.Do(context);
+////            Console.WriteLine("Returned {0}", context["return"]);
+////        }
+////    }
+
+////    public class SetAction : Action {
+////        public override Execution CreateExecution() {
+////            return new SetExecution(this);
+////        }
+
+////        protected class SetExecution : Execution {
+////            public object Value { get; private set; }
+////            public String VariableName { get; private set; }
+
+
+////            public override bool DoChunk(ExecutionContext context) {
+////                context[VariableName] = Value;
+////            }
+////        }
+
+////    }
+
+////    //// hopefully can live without/use object instead
+////    public class LiteralExpression : Expression {
+////        protected object value;
+////        public override object Value { get { return value; } }
+
+////        public LiteralExpression(object value) {
+////            this.value = value;
+////        }
+
+////        public override Execution CreateExecution() {
+////            return new LiteralExecution(this);
+////        }
+////    }
+
+////    //// hopefully can live without/use object instead
+////    public class LiteralExecution : Execution {
+////        public LiteralExecution(LiteralExpression literal) : base(literal) { }
+
+////        public override bool DoChunk(ExecutionContext context) {
+////            Result = ((LiteralExpression)Action).Value;
+////            return true;
+////        }
+////    }
+
+////    // Addition
+////    // double + double
+////    // Expression + double
+////    // Expression + Expression
+////    public class ExpressionDoubleAddition : Expression {
+////        public Expression Addend1Expression { get; private set; }
+////        public double Addend2 { get; private set; }
+
+////        public ExpressionDoubleAddition(Expression addend1Expression, double addend2) {
+////            Addend1Expression = addend1Expression;
+////            Addend2 = addend2;
+////        }
+
+////        public override Execution CreateExecution() {
+////            return new ExpressionDoubleExecution(this);
+////        }
+////    }
+
+////    public class ExpressionDoubleExecution : Execution {
+////        protected Execution addend1Execution;
+
+////        public ExpressionDoubleAddition ExpressionDoubleAddition { get; private set; }
+
+////        public ExpressionDoubleExecution(ExpressionDoubleAddition action) : base(action) { }
+    
+////        public override bool DoChunk(ExecutionContext context) {
+////            if (addend1Execution == null) {
+////                addend1Execution = ((ExpressionDoubleAddition)Action).CreateExecution();
+////                if (addend1Execution.Result == null) {
+////                    return addend1Execution.DoChunk(context);
+////                }
+////                return true;
+////            }
+////        }
+////    }
+////}
