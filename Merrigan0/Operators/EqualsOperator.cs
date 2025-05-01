@@ -23,6 +23,7 @@ namespace Merrigan0 {
             RegisterTypedCalculationFunction<double>((l, r) => (double)l == (double)r);
             RegisterTypedCalculationFunction<decimal>((l, r) => (decimal)l == (decimal)r);
             RegisterTypedCalculationFunction<IComparable>((l, r) => ((IComparable)l).CompareTo((IComparable)r) == 0);
+            RegisterTypedCalculationFunction<IEnumerable>((l, r) => Utilities.EnumerablesEqual((IEnumerable)l, (IEnumerable)r));
             RegisterTypedCalculationFunction<object>((l, r) => Object.Equals(l, r));
         }
     }

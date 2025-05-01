@@ -65,6 +65,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="Gloms\StringGlom.cs" />
     <Compile Include="Nodes\INode.cs" />
+    <Compile Include="Operators\ArraysEqualOperator.cs" />
     <Compile Include="Recognizers\MinimalWholeNumberRecognizer.cs" />
     <Compile Include="Json\JsonRecognizer.cs" />
     <Compile Include="Maps\CastMap.cs" />

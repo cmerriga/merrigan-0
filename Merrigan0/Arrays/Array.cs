@@ -21,6 +21,7 @@ namespace Merrigan0 {
         [Untested]
         public static Array<T> operator +(Array<T> a1, Array<T> a2) { return new ConcatenateArray<T>(a1, a2); }
 
+        //[Example("(1, 2, 3)", 4, "(1, 2, 3, 4)")]
         [return: Equals("Length", "a.Length + 1")]
         [Untested]
         public static Array<T> operator +(Array<T> a, T item) { return new AppendArray<T>(a, item); }
