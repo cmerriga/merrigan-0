@@ -1,7 +1,10 @@
 ﻿using System;
 
 namespace Merrigan0 {
-    // For objects that may want to cache values
+    // For objects that may want to cache values that are expensive to calculate and could be reused
+    // because the instance they are based on is immutable.
+    //
+    // 
     [Untested]
     public class Extension /*: IShrinkable*/ {
         // A sentinel value to use when a result has been created but the result was null
