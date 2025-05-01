@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experiment", "Experiment\Experiment.csproj", "{15CEB738-9796-4B03-851D-06298647A6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Executions", "Executions\Executions.csproj", "{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompilationTest", "CompilationTest\CompilationTest.csproj", "{14F65FD5-B97F-43F1-86CD-730509299DB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlomConsole", "GlomConsole\GlomConsole.csproj", "{4DC35B72-7D6C-48B5-831B-3E47AE594BB1}"
@@ -30,9 +28,6 @@ Global
 		{15CEB738-9796-4B03-851D-06298647A6AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{15CEB738-9796-4B03-851D-06298647A6AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15CEB738-9796-4B03-851D-06298647A6AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED3C3E2A-87DB-448A-A1D9-9475EF4D6876}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14F65FD5-B97F-43F1-86CD-730509299DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
